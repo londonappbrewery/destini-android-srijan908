@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
            mStory.setText(mStorySet[2].getStory());
            mTopButton.setText(mStorySet[2].getStory_Ans1());
            mBottomButton.setText(mStorySet[2].getStory_Ans2());
-           if (mTopButtonCount == 2 && mBottomButtonCount ==0) {
+           if (mTopButtonCount == 2 && (mBottomButtonCount ==0 || mBottomButtonCount == 1)) {
                mStory.setText(mStoryEnd[2].getEnd());
                mTopButton.setVisibility(View.INVISIBLE);
                mBottomButton.setVisibility(View.INVISIBLE);
@@ -67,12 +67,13 @@ public class MainActivity extends AppCompatActivity {
                mStory.setText(mStorySet[2].getStory());
                mTopButton.setText(mStorySet[2].getStory_Ans1());
                mBottomButton.setText(mStorySet[2].getStory_Ans2());
-           }
+           }/*
            if (mTopButtonCount == 2 && mBottomButtonCount ==1){
                mStory.setText(mStoryEnd[2].getEnd());
                mTopButton.setVisibility(View.INVISIBLE);
                mBottomButton.setVisibility(View.INVISIBLE);
            }
+           */
        }
        else if (set == 1) {
            mBottomButtonCount = mBottomButtonCount + 1;
@@ -84,16 +85,17 @@ public class MainActivity extends AppCompatActivity {
                mTopButton.setVisibility(View.INVISIBLE);
                mBottomButton.setVisibility(View.INVISIBLE);
            }
-           if (mBottomButtonCount == 2 && mTopButtonCount == 1) {
+           if ((mBottomButtonCount == 2 && mTopButtonCount == 1) || mBottomButtonCount == 1 && mTopButtonCount == 1) {
                mStory.setText(mStoryEnd[1].getEnd());
                mTopButton.setVisibility(View.INVISIBLE);
                mBottomButton.setVisibility(View.INVISIBLE);
-           }
+           }/*
            if (mBottomButtonCount == 1 && mTopButtonCount == 1) {
                mStory.setText(mStoryEnd[1].getEnd());
                mTopButton.setVisibility(View.INVISIBLE);
                mBottomButton.setVisibility(View.INVISIBLE);
            }
+           */
        }
     }
 }
